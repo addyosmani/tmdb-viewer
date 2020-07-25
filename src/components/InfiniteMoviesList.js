@@ -107,7 +107,7 @@ class InfiniteMoviesList extends React.PureComponent {
               <InfiniteLoader
                 ref={this.infiniteLoaderRef}
                 itemCount={rowCount}
-                isItemLoaded={({index}) => {
+                isItemLoaded={index => {
                   const {hasMore, movies} = this.props;
                   const maxItemsPerRow = getMaxItemsAmountPerRow(width);
                   const allItemsLoaded = generateIndexesForRow(index, maxItemsPerRow, movies.length).length > 0;
